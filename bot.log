@@ -1,0 +1,86 @@
+2025-10-24 22:21:31,950 - INFO - Attempting market order: BUY 0.01 BTCUSDT
+2025-10-24 22:21:32,131 - INFO - SUCCESS: Market order placed.
+2025-10-24 22:21:32,132 - INFO - {'symbol': 'BTCUSDT', 'orderId': 6216825, 'orderListId': -1, 'clientOrderId': 'x-HNA2TXFJ2566696af374bdd815cfea', 'transactTime': 1761324692084, 'price': '0.00000000', 'origQty': '0.01000000', 'executedQty': '0.01000000', 'origQuoteOrderQty': '0.00000000', 'cummulativeQuoteQty': '1101.46510000', 'status': 'FILLED', 'timeInForce': 'GTC', 'type': 'MARKET', 'side': 'BUY', 'workingTime': 1761324692084, 'fills': [{'price': '110146.51000000', 'qty': '0.01000000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'tradeId': 2919538}], 'selfTradePreventionMode': 'EXPIRE_MAKER'}
+2025-10-24 22:46:10,479 - INFO - Attempting limit order: BUY 0.01 BTCUSDT @ 20000.0
+2025-10-24 22:46:10,650 - ERROR - API ERROR: APIError(code=-1013): Filter failure: PERCENT_PRICE_BY_SIDE
+2025-10-24 22:46:59,091 - INFO - Attempting limit order: BUY 0.01 BTCUSDT @ 95000.0
+2025-10-24 22:46:59,269 - INFO - SUCCESS: Limit order placed.
+2025-10-24 22:46:59,270 - INFO - {'symbol': 'BTCUSDT', 'orderId': 6221802, 'orderListId': -1, 'clientOrderId': 'x-HNA2TXFJ2201f0b193e52fb603487c', 'transactTime': 1761326219210, 'price': '95000.00000000', 'origQty': '0.01000000', 'executedQty': '0.00000000', 'origQuoteOrderQty': '0.00000000', 'cummulativeQuoteQty': '0.00000000', 'status': 'NEW', 'timeInForce': 'GTC', 'type': 'LIMIT', 'side': 'BUY', 'workingTime': 1761326219210, 'fills': [], 'selfTradePreventionMode': 'EXPIRE_MAKER'}
+2025-10-24 22:51:53,494 - INFO - Attempting stop-limit: SELL 0.01 BTCUSDT
+2025-10-24 22:51:53,495 - INFO - Stop Price: 90000.0, Limit Price: 89900.0
+2025-10-24 22:51:53,704 - ERROR - API ERROR: APIError(code=-1116): Invalid orderType.
+2025-10-24 22:56:06,111 - INFO - Attempting limit order: BUY 0.01 BTCUSDT @ 95000.0
+2025-10-24 22:56:06,289 - INFO - SUCCESS: Limit order placed.
+2025-10-24 22:56:06,290 - INFO - {'symbol': 'BTCUSDT', 'orderId': 6224084, 'orderListId': -1, 'clientOrderId': 'x-HNA2TXFJce148f3784c61aa69f0ee3', 'transactTime': 1761326766225, 'price': '95000.00000000', 'origQty': '0.01000000', 'executedQty': '0.00000000', 'origQuoteOrderQty': '0.00000000', 'cummulativeQuoteQty': '0.00000000', 'status': 'NEW', 'timeInForce': 'GTC', 'type': 'LIMIT', 'side': 'BUY', 'workingTime': 1761326766225, 'fills': [], 'selfTradePreventionMode': 'EXPIRE_MAKER'}
+2025-10-24 22:56:35,509 - INFO - Attempting stop-limit: SELL 0.01 BTCUSDT
+2025-10-24 22:56:35,509 - INFO - Stop Price: 90000.0, Limit Price: 89900.0
+2025-10-24 22:56:35,679 - ERROR - API ERROR: APIError(code=-1116): Invalid orderType.
+2025-10-24 23:19:13,037 - INFO - Attempting OCO SELL order for 0.01 BTCUSDT.
+2025-10-24 23:19:13,039 - INFO -   - Take Profit Price: 110000.0
+2025-10-24 23:19:13,039 - INFO -   - Stop-Loss Trigger: 90000.0
+2025-10-24 23:19:13,039 - INFO -   - Stop-Loss Limit: 89900.0
+2025-10-24 23:19:13,210 - ERROR - API ERROR: APIError(code=-1102): Mandatory parameter 'aboveType' was not sent, was empty/null, or malformed.
+2025-10-24 23:21:48,988 - INFO - --- Initiating TWAP BUY Order ---
+2025-10-24 23:21:48,988 - INFO -   Total Quantity: 0.02 BTCUSDT
+2025-10-24 23:21:48,988 - INFO -   Duration: 1 minutes
+2025-10-24 23:21:48,988 - INFO -   Slices: 10 x 0.002 BTCUSDT
+2025-10-24 23:21:48,988 - INFO -   Interval: 6 seconds per order
+2025-10-24 23:21:48,988 - INFO - TWAP Slice 1/10: Placing order...
+2025-10-24 23:21:49,218 - INFO - Attempting market order: BUY 0.002 BTCUSDT
+2025-10-24 23:21:49,395 - INFO - SUCCESS: Market order placed.
+2025-10-24 23:21:49,395 - INFO - {'symbol': 'BTCUSDT', 'orderId': 6231575, 'orderListId': -1, 'clientOrderId': 'x-HNA2TXFJff747abc50f38bd8b7eec3', 'transactTime': 1761328309325, 'price': '0.00000000', 'origQty': '0.00200000', 'executedQty': '0.00200000', 'origQuoteOrderQty': '0.00000000', 'cummulativeQuoteQty': '220.56840000', 'status': 'FILLED', 'timeInForce': 'GTC', 'type': 'MARKET', 'side': 'BUY', 'workingTime': 1761328309325, 'fills': [{'price': '110284.20000000', 'qty': '0.00200000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'tradeId': 2928705}], 'selfTradePreventionMode': 'EXPIRE_MAKER'}
+2025-10-24 23:21:49,398 - INFO - TWAP: Sleeping for 6 seconds...
+2025-10-24 23:21:55,403 - INFO - TWAP Slice 2/10: Placing order...
+2025-10-24 23:21:55,640 - INFO - Attempting market order: BUY 0.002 BTCUSDT
+2025-10-24 23:21:55,818 - INFO - SUCCESS: Market order placed.
+2025-10-24 23:21:55,818 - INFO - {'symbol': 'BTCUSDT', 'orderId': 6231590, 'orderListId': -1, 'clientOrderId': 'x-HNA2TXFJ5801d7c6f2c6485a3ea131', 'transactTime': 1761328315749, 'price': '0.00000000', 'origQty': '0.00200000', 'executedQty': '0.00200000', 'origQuoteOrderQty': '0.00000000', 'cummulativeQuoteQty': '220.56840000', 'status': 'FILLED', 'timeInForce': 'GTC', 'type': 'MARKET', 'side': 'BUY', 'workingTime': 1761328315749, 'fills': [{'price': '110284.20000000', 'qty': '0.00200000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'tradeId': 2928708}], 'selfTradePreventionMode': 'EXPIRE_MAKER'}
+2025-10-24 23:21:55,821 - INFO - TWAP: Sleeping for 6 seconds...
+2025-10-24 23:22:01,825 - INFO - TWAP Slice 3/10: Placing order...
+2025-10-24 23:22:02,103 - INFO - Attempting market order: BUY 0.002 BTCUSDT
+2025-10-24 23:22:02,290 - INFO - SUCCESS: Market order placed.
+2025-10-24 23:22:02,291 - INFO - {'symbol': 'BTCUSDT', 'orderId': 6231597, 'orderListId': -1, 'clientOrderId': 'x-HNA2TXFJff75dc530f5bdafecb6163', 'transactTime': 1761328322221, 'price': '0.00000000', 'origQty': '0.00200000', 'executedQty': '0.00200000', 'origQuoteOrderQty': '0.00000000', 'cummulativeQuoteQty': '220.56840000', 'status': 'FILLED', 'timeInForce': 'GTC', 'type': 'MARKET', 'side': 'BUY', 'workingTime': 1761328322221, 'fills': [{'price': '110284.20000000', 'qty': '0.00200000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'tradeId': 2928712}], 'selfTradePreventionMode': 'EXPIRE_MAKER'}
+2025-10-24 23:22:02,293 - INFO - TWAP: Sleeping for 6 seconds...
+2025-10-24 23:22:08,298 - INFO - TWAP Slice 4/10: Placing order...
+2025-10-24 23:22:10,578 - INFO - Attempting market order: BUY 0.002 BTCUSDT
+2025-10-24 23:22:10,758 - INFO - SUCCESS: Market order placed.
+2025-10-24 23:22:10,758 - INFO - {'symbol': 'BTCUSDT', 'orderId': 6231604, 'orderListId': -1, 'clientOrderId': 'x-HNA2TXFJ73b7edaa0d4df4580c33a9', 'transactTime': 1761328330696, 'price': '0.00000000', 'origQty': '0.00200000', 'executedQty': '0.00200000', 'origQuoteOrderQty': '0.00000000', 'cummulativeQuoteQty': '220.56840000', 'status': 'FILLED', 'timeInForce': 'GTC', 'type': 'MARKET', 'side': 'BUY', 'workingTime': 1761328330696, 'fills': [{'price': '110284.20000000', 'qty': '0.00200000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'tradeId': 2928717}], 'selfTradePreventionMode': 'EXPIRE_MAKER'}
+2025-10-24 23:22:10,760 - INFO - TWAP: Sleeping for 6 seconds...
+2025-10-24 23:22:16,761 - INFO - TWAP Slice 5/10: Placing order...
+2025-10-24 23:22:17,010 - INFO - Attempting market order: BUY 0.002 BTCUSDT
+2025-10-24 23:22:20,060 - INFO - SUCCESS: Market order placed.
+2025-10-24 23:22:20,060 - INFO - {'symbol': 'BTCUSDT', 'orderId': 6231781, 'orderListId': -1, 'clientOrderId': 'x-HNA2TXFJe70c1be24541e44bb65a78', 'transactTime': 1761328337421, 'price': '0.00000000', 'origQty': '0.00200000', 'executedQty': '0.00200000', 'origQuoteOrderQty': '0.00000000', 'cummulativeQuoteQty': '220.63540000', 'status': 'FILLED', 'timeInForce': 'GTC', 'type': 'MARKET', 'side': 'BUY', 'workingTime': 1761328337421, 'fills': [{'price': '110317.70000000', 'qty': '0.00200000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'tradeId': 2928870}], 'selfTradePreventionMode': 'EXPIRE_MAKER'}
+2025-10-24 23:22:20,062 - INFO - TWAP: Sleeping for 6 seconds...
+2025-10-24 23:22:26,068 - INFO - TWAP Slice 6/10: Placing order...
+2025-10-24 23:22:28,716 - INFO - Attempting market order: BUY 0.002 BTCUSDT
+2025-10-24 23:22:28,887 - INFO - SUCCESS: Market order placed.
+2025-10-24 23:22:28,888 - INFO - {'symbol': 'BTCUSDT', 'orderId': 6231804, 'orderListId': -1, 'clientOrderId': 'x-HNA2TXFJded92617ccbaa142594dea', 'transactTime': 1761328348826, 'price': '0.00000000', 'origQty': '0.00200000', 'executedQty': '0.00200000', 'origQuoteOrderQty': '0.00000000', 'cummulativeQuoteQty': '220.63540000', 'status': 'FILLED', 'timeInForce': 'GTC', 'type': 'MARKET', 'side': 'BUY', 'workingTime': 1761328348826, 'fills': [{'price': '110317.70000000', 'qty': '0.00200000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'tradeId': 2928876}], 'selfTradePreventionMode': 'EXPIRE_MAKER'}
+2025-10-24 23:22:28,890 - INFO - TWAP: Sleeping for 6 seconds...
+2025-10-24 23:22:34,895 - INFO - TWAP Slice 7/10: Placing order...
+2025-10-24 23:22:35,279 - INFO - Attempting market order: BUY 0.002 BTCUSDT
+2025-10-24 23:22:35,455 - INFO - SUCCESS: Market order placed.
+2025-10-24 23:22:35,455 - INFO - {'symbol': 'BTCUSDT', 'orderId': 6231808, 'orderListId': -1, 'clientOrderId': 'x-HNA2TXFJe4e5b18d40b319f8b98a21', 'transactTime': 1761328355391, 'price': '0.00000000', 'origQty': '0.00200000', 'executedQty': '0.00200000', 'origQuoteOrderQty': '0.00000000', 'cummulativeQuoteQty': '220.63540000', 'status': 'FILLED', 'timeInForce': 'GTC', 'type': 'MARKET', 'side': 'BUY', 'workingTime': 1761328355391, 'fills': [{'price': '110317.70000000', 'qty': '0.00200000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'tradeId': 2928880}], 'selfTradePreventionMode': 'EXPIRE_MAKER'}
+2025-10-24 23:22:35,458 - INFO - TWAP: Sleeping for 6 seconds...
+2025-10-24 23:22:41,463 - INFO - TWAP Slice 8/10: Placing order...
+2025-10-24 23:22:43,292 - INFO - Attempting market order: BUY 0.002 BTCUSDT
+2025-10-24 23:22:43,485 - INFO - SUCCESS: Market order placed.
+2025-10-24 23:22:43,485 - INFO - {'symbol': 'BTCUSDT', 'orderId': 6231814, 'orderListId': -1, 'clientOrderId': 'x-HNA2TXFJ1ceaba1afae5d8f06f8f55', 'transactTime': 1761328363415, 'price': '0.00000000', 'origQty': '0.00200000', 'executedQty': '0.00200000', 'origQuoteOrderQty': '0.00000000', 'cummulativeQuoteQty': '220.63540000', 'status': 'FILLED', 'timeInForce': 'GTC', 'type': 'MARKET', 'side': 'BUY', 'workingTime': 1761328363415, 'fills': [{'price': '110317.70000000', 'qty': '0.00200000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'tradeId': 2928883}], 'selfTradePreventionMode': 'EXPIRE_MAKER'}
+2025-10-24 23:22:43,488 - INFO - TWAP: Sleeping for 6 seconds...
+2025-10-24 23:22:49,493 - INFO - TWAP Slice 9/10: Placing order...
+2025-10-24 23:22:50,023 - INFO - Attempting market order: BUY 0.002 BTCUSDT
+2025-10-24 23:22:51,291 - INFO - SUCCESS: Market order placed.
+2025-10-24 23:22:51,291 - INFO - {'symbol': 'BTCUSDT', 'orderId': 6231841, 'orderListId': -1, 'clientOrderId': 'x-HNA2TXFJ50b11089604f4f716118fd', 'transactTime': 1761328371214, 'price': '0.00000000', 'origQty': '0.00200000', 'executedQty': '0.00200000', 'origQuoteOrderQty': '0.00000000', 'cummulativeQuoteQty': '220.58880000', 'status': 'FILLED', 'timeInForce': 'GTC', 'type': 'MARKET', 'side': 'BUY', 'workingTime': 1761328371214, 'fills': [{'price': '110294.40000000', 'qty': '0.00200000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'tradeId': 2928886}], 'selfTradePreventionMode': 'EXPIRE_MAKER'}
+2025-10-24 23:22:51,292 - INFO - TWAP: Sleeping for 6 seconds...
+2025-10-24 23:22:57,294 - INFO - TWAP Slice 10/10: Placing order...
+2025-10-24 23:23:02,258 - INFO - Attempting market order: BUY 0.002 BTCUSDT
+2025-10-24 23:23:02,433 - INFO - SUCCESS: Market order placed.
+2025-10-24 23:23:02,433 - INFO - {'symbol': 'BTCUSDT', 'orderId': 6231894, 'orderListId': -1, 'clientOrderId': 'x-HNA2TXFJ7ab10846e31fb202c254a0', 'transactTime': 1761328382367, 'price': '0.00000000', 'origQty': '0.00200000', 'executedQty': '0.00200000', 'origQuoteOrderQty': '0.00000000', 'cummulativeQuoteQty': '220.53242000', 'status': 'FILLED', 'timeInForce': 'GTC', 'type': 'MARKET', 'side': 'BUY', 'workingTime': 1761328382367, 'fills': [{'price': '110266.21000000', 'qty': '0.00200000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'tradeId': 2928892}], 'selfTradePreventionMode': 'EXPIRE_MAKER'}
+2025-10-24 23:23:02,435 - INFO - --- TWAP Order Completed ---
+2025-10-24 23:29:47,872 - INFO - Attempting market order: BUY 0.01 BTCUSDT
+2025-10-24 23:29:48,074 - INFO - SUCCESS: Market order placed.
+2025-10-24 23:29:48,074 - INFO - {'symbol': 'BTCUSDT', 'orderId': 6232803, 'orderListId': -1, 'clientOrderId': 'x-HNA2TXFJ3ff869f3236c82582d972b', 'transactTime': 1761328788005, 'price': '0.00000000', 'origQty': '0.01000000', 'executedQty': '0.01000000', 'origQuoteOrderQty': '0.00000000', 'cummulativeQuoteQty': '1102.35240000', 'status': 'FILLED', 'timeInForce': 'GTC', 'type': 'MARKET', 'side': 'BUY', 'workingTime': 1761328788005, 'fills': [{'price': '110235.24000000', 'qty': '0.01000000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'tradeId': 2929195}], 'selfTradePreventionMode': 'EXPIRE_MAKER'}
+2025-10-24 23:31:04,366 - INFO - Attempting limit order: BUY 0.01 BTCUSDT @ 95000.0
+2025-10-24 23:31:04,559 - INFO - SUCCESS: Limit order placed.
+2025-10-24 23:31:04,560 - INFO - {'symbol': 'BTCUSDT', 'orderId': 6233138, 'orderListId': -1, 'clientOrderId': 'x-HNA2TXFJ7fcce8fb90df55ce161db3', 'transactTime': 1761328864488, 'price': '95000.00000000', 'origQty': '0.01000000', 'executedQty': '0.00000000', 'origQuoteOrderQty': '0.00000000', 'cummulativeQuoteQty': '0.00000000', 'status': 'NEW', 'timeInForce': 'GTC', 'type': 'LIMIT', 'side': 'BUY', 'workingTime': 1761328864488, 'fills': [], 'selfTradePreventionMode': 'EXPIRE_MAKER'}
+2025-10-24 23:35:45,566 - INFO - Attempting stop-limit: SELL 0.01 BTCUSDT
+2025-10-24 23:35:45,567 - INFO - Stop Price: 90000.0, Limit Price: 89900.0
+2025-10-24 23:35:45,763 - ERROR - API ERROR: APIError(code=-1116): Invalid orderType.
