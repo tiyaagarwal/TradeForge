@@ -1,6 +1,6 @@
 # Binance CLI Trading Bot
 
-This is a command-line interface (CLI) trading bot built for the Binance Testnet, as required for the Junior Python Developer application.
+This is a command-line interface (CLI) trading bot built for the Binance Testnet.
 
 The bot supports market, limit, and stop-limit orders. All actions and errors are recorded in `bot.log`.
 
