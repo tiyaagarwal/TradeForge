@@ -1,6 +1,6 @@
-# Binance CLI Trading Bot
+# TradeForge
 
-This is a command-line interface (CLI) trading bot built for the Binance Testnet.
+TradeForge is a command-line interface (CLI) trading bot built for the Binance Testnet.
 
 The bot supports market, limit, and stop-limit orders. All actions and errors are recorded in `bot.log`.
 
@@ -8,7 +8,7 @@ The bot supports market, limit, and stop-limit orders. All actions and errors ar
 
 1.  **Navigate to the project folder:**
     ```bash
-    cd /path/to/your/binance_bot
+    cd /path/to/your/tradeforge
     ```
 
 2.  **Create and activate a virtual environment:**
