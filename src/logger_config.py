@@ -2,7 +2,7 @@ import logging
 import sys
 
 def setup_logger():
-    logger = logging.getLogger("BinanceBot")
+    logger = logging.getLogger("TradeForge")
     logger.setLevel(logging.INFO)
     if logger.hasHandlers():
         logger.handlers.clear()
