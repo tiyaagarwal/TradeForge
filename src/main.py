@@ -6,7 +6,7 @@ from src.advanced.oco import place_oco_order
 from src.advanced.twap import execute_twap_order # New import
 
 def main():
-    parser = argparse.ArgumentParser(description="A CLI-based Binance Trading Bot")
+    parser = argparse.ArgumentParser(description="TradeForge - a CLI-based Binance trading bot")
     subparsers = parser.add_subparsers(dest='command', help='Available commands', required=True)
 
     # --- Market ---
