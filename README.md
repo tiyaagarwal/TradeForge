@@ -48,3 +48,4 @@ Buys or sells immediately at the current market price.
 **Example:**
 ```bash
 python3 -m src.main market BTCUSDT BUY 0.01
+```
