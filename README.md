@@ -2,7 +2,7 @@
 
 TradeForge is a command-line interface (CLI) trading bot built for the Binance Testnet.
 
-The bot supports market, limit, and stop-limit orders. All actions and errors are recorded in `bot.log`.
+The bot supports market, limit, stop-limit, OCO, and TWAP orders. All actions and errors are recorded in `bot.log`.
 
 ## Setup Instructions
 
@@ -42,6 +42,50 @@ Buys or sells immediately at the current market price.
 **Example:**
 ```bash
 python3 -m src.main market BTCUSDT BUY 0.01
+```
+
+### Place a Limit Order
+Buys or sells once the market reaches a specified price.
+
+**Usage:**
+`python3 -m src.main limit <SYMBOL> <SIDE> <QUANTITY> <PRICE>`
+
+**Example:**
+```bash
+python3 -m src.main limit BTCUSDT BUY 0.01 60000
+```
+
+### Place a Stop-Limit Order
+Places a limit order once the market price crosses a trigger (stop) price.
+
+**Usage:**
+`python3 -m src.main stoplimit <SYMBOL> <SIDE> <QUANTITY> <PRICE> <STOP_PRICE>`
+
+**Example:**
+```bash
+python3 -m src.main stoplimit BTCUSDT SELL 0.01 58000 58500
+```
+
+### Place an OCO Order
+Places a take-profit (limit) order and a stop-loss (stop-limit) order together; when one fills, the other is cancelled.
+
+**Usage:**
+`python3 -m src.main oco <SYMBOL> <SIDE> <QUANTITY> <PRICE> <STOP_PRICE> <STOP_LIMIT_PRICE>`
+
+**Example:**
+```bash
+python3 -m src.main oco BTCUSDT SELL 0.01 62000 58000 57900
+```
+
+### Place a TWAP Order
+Splits a total quantity into 10 equal market orders spread evenly over a given duration, to reduce market impact.
+
+**Usage:**
+`python3 -m src.main twap <SYMBOL> <SIDE> <TOTAL_QUANTITY> <DURATION_MINUTES>`
+
+**Example:**
+```bash
+python3 -m src.main twap BTCUSDT BUY 0.1 10
 ```
 
 ## Note on Stop-Limit Orders
