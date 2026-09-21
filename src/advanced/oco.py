@@ -42,7 +42,7 @@ def place_oco_order(symbol, side, quantity, price, stop_price, stop_limit_price)
         # Check for the 'Invalid orderType' error again
         if e.code == -1116:
             log.warning(f"API WARNING: This testnet does not support OCO orders. {e}")
-            print(f"\n⚠️ API Warning: The testnet reported an 'Invalid orderType' error.")
+            print("\n⚠️ API Warning: The testnet reported an 'Invalid orderType' error.")
             print("   This is a testnet limitation, but the code is correct.")
         else:
             log.error(f"API ERROR: {e}")
