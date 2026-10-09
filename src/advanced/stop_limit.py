@@ -14,7 +14,7 @@ def place_stop_limit_order(symbol, side, quantity, price, stop_price):
         order = client.create_order(
             symbol=symbol.upper(),
             side=side.upper(),
-            type='STOP_LIMIT',
+            type='STOP_LOSS_LIMIT',
             timeInForce='GTC',
             quantity=quantity,
             price=f'{price:.2f}', # The limit price

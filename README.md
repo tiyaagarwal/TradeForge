@@ -90,6 +90,4 @@ python3 -m src.main twap BTCUSDT BUY 0.1 10
 
 ## Note on Stop-Limit Orders
 
-The code for `stoplimit` is fully implemented in `src/advanced/stop_limit.py`.
-
-However, the `testnet.binance.vision` (Spot Testnet) used for API key generation does not support the `STOP_LIMIT` order type. When run, it correctly connects to the API, but the server returns an `APIError(code=-1116): Invalid orderType`, which is captured in the `bot.log`. The code is correct, but the testnet has this limitation.
+The code for `stoplimit` is implemented in `src/advanced/stop_limit.py`. It previously sent `type='STOP_LIMIT'` to the Binance API, which isn't a real Binance order type (the valid spot types are `LIMIT`, `MARKET`, `STOP_LOSS`, `STOP_LOSS_LIMIT`, `TAKE_PROFIT`, `TAKE_PROFIT_LIMIT`, and `LIMIT_MAKER`) — that's what triggered the `APIError(code=-1116): Invalid orderType` response, on the testnet or otherwise. It now sends `STOP_LOSS_LIMIT`, the correct type for this order.
