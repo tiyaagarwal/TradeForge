@@ -78,7 +78,7 @@ python3 -m src.main oco BTCUSDT SELL 0.01 62000 58000 57900
 ```
 
 ### Place a TWAP Order
-Splits a total quantity into 10 equal market orders spread evenly over a given duration, to reduce market impact.
+Splits a total quantity into 10 market orders spread evenly over a given duration, to reduce market impact. Each slice is rounded to the symbol's lot step; the last slice carries the rounding remainder so the slices add up to the total.
 
 **Usage:**
 `python3 -m src.main twap <SYMBOL> <SIDE> <TOTAL_QUANTITY> <DURATION_MINUTES>`
@@ -87,6 +87,19 @@ Splits a total quantity into 10 equal market orders spread evenly over a given d
 ```bash
 python3 -m src.main twap BTCUSDT BUY 0.1 10
 ```
+
+## Price and Quantity Precision
+
+Before placing an order, the bot reads the symbol's `PRICE_FILTER` and `LOT_SIZE` rules from Binance. Prices are rounded to the nearest valid tick and quantities are rounded down to the lot step (so you never trade more than you asked for); any adjustment is logged as a warning. This means low-priced pairs like `DOGEUSDT 0.12345` keep their full precision instead of being cut to two decimals. Quantities below the symbol's minimum are rejected before anything is sent.
+
+## Running the Tests
+
+```bash
+pip install pytest
+python3 -m pytest
+```
+
+The tests mock the Binance client, so they need no API keys or network access.
 
 ## Note on Stop-Limit Orders
 

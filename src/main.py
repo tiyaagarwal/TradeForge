@@ -5,6 +5,18 @@ from src.advanced.stop_limit import place_stop_limit_order
 from src.advanced.oco import place_oco_order
 from src.advanced.twap import execute_twap_order # New import
 
+def positive_float(value):
+    number = float(value)
+    if not 0 < number < float("inf"):
+        raise argparse.ArgumentTypeError(f"must be greater than 0, got {value}")
+    return number
+
+def positive_int(value):
+    number = int(value)
+    if not 0 < number < float("inf"):
+        raise argparse.ArgumentTypeError(f"must be greater than 0, got {value}")
+    return number
+
 def main():
     parser = argparse.ArgumentParser(description="TradeForge - a CLI-based Binance trading bot")
     subparsers = parser.add_subparsers(dest='command', help='Available commands', required=True)
@@ -12,39 +24,39 @@ def main():
     # --- Market ---
     parser_market = subparsers.add_parser('market', help='Place a market order')
     parser_market.add_argument('symbol', type=str)
-    parser_market.add_argument('side', type=str, choices=['BUY', 'SELL'])
-    parser_market.add_argument('quantity', type=float)
+    parser_market.add_argument('side', type=str.upper, choices=['BUY', 'SELL'])
+    parser_market.add_argument('quantity', type=positive_float)
 
     # --- Limit ---
     parser_limit = subparsers.add_parser('limit', help='Place a limit order')
     parser_limit.add_argument('symbol', type=str)
-    parser_limit.add_argument('side', type=str, choices=['BUY', 'SELL'])
-    parser_limit.add_argument('quantity', type=float)
-    parser_limit.add_argument('price', type=float)
+    parser_limit.add_argument('side', type=str.upper, choices=['BUY', 'SELL'])
+    parser_limit.add_argument('quantity', type=positive_float)
+    parser_limit.add_argument('price', type=positive_float)
 
     # --- Stop-Limit ---
     parser_stop = subparsers.add_parser('stoplimit', help='Place a stop-limit order')
     parser_stop.add_argument('symbol', type=str)
-    parser_stop.add_argument('side', type=str, choices=['BUY', 'SELL'])
-    parser_stop.add_argument('quantity', type=float)
-    parser_stop.add_argument('price', type=float)
-    parser_stop.add_argument('stop_price', type=float)
+    parser_stop.add_argument('side', type=str.upper, choices=['BUY', 'SELL'])
+    parser_stop.add_argument('quantity', type=positive_float)
+    parser_stop.add_argument('price', type=positive_float)
+    parser_stop.add_argument('stop_price', type=positive_float)
 
     # --- OCO ---
     parser_oco = subparsers.add_parser('oco', help='Place an OCO order (take-profit + stop-loss)')
     parser_oco.add_argument('symbol', type=str)
-    parser_oco.add_argument('side', type=str, choices=['BUY', 'SELL'])
-    parser_oco.add_argument('quantity', type=float)
-    parser_oco.add_argument('price', type=float)
-    parser_oco.add_argument('stop_price', type=float)
-    parser_oco.add_argument('stop_limit_price', type=float)
+    parser_oco.add_argument('side', type=str.upper, choices=['BUY', 'SELL'])
+    parser_oco.add_argument('quantity', type=positive_float)
+    parser_oco.add_argument('price', type=positive_float)
+    parser_oco.add_argument('stop_price', type=positive_float)
+    parser_oco.add_argument('stop_limit_price', type=positive_float)
 
     # --- NEW: TWAP (Time-Weighted Average Price) ---
     parser_twap = subparsers.add_parser('twap', help='Execute a TWAP order over time')
     parser_twap.add_argument('symbol', type=str)
-    parser_twap.add_argument('side', type=str, choices=['BUY', 'SELL'])
-    parser_twap.add_argument('total_quantity', type=float, help='The total quantity to trade')
-    parser_twap.add_argument('duration_minutes', type=int, help='Total duration in minutes')
+    parser_twap.add_argument('side', type=str.upper, choices=['BUY', 'SELL'])
+    parser_twap.add_argument('total_quantity', type=positive_float, help='The total quantity to trade')
+    parser_twap.add_argument('duration_minutes', type=positive_int, help='Total duration in minutes')
 
     args = parser.parse_args()
 

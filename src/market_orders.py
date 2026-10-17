@@ -1,5 +1,6 @@
 from binance.exceptions import BinanceAPIException
 from src.client import get_binance_client
+from src.filters import get_symbol_filters, format_price, format_quantity
 from src.logger_config import log
 
 def place_market_order(symbol, side, quantity):
@@ -8,13 +9,14 @@ def place_market_order(symbol, side, quantity):
     """
     try:
         client = get_binance_client()
+        filters = get_symbol_filters(client, symbol)
         log.info(f"Attempting market order: {side.upper()} {quantity} {symbol.upper()}")
 
         order = client.create_order(
             symbol=symbol.upper(),
             side=side.upper(),
             type='MARKET',
-            quantity=quantity
+            quantity=format_quantity(quantity, filters)
         )
 
         log.info("SUCCESS: Market order placed.")

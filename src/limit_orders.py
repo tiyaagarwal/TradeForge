@@ -1,5 +1,6 @@
 from binance.exceptions import BinanceAPIException
 from src.client import get_binance_client
+from src.filters import get_symbol_filters, format_price, format_quantity
 from src.logger_config import log
 
 def place_limit_order(symbol, side, quantity, price):
@@ -8,6 +9,7 @@ def place_limit_order(symbol, side, quantity, price):
     """
     try:
         client = get_binance_client()
+        filters = get_symbol_filters(client, symbol)
         log.info(f"Attempting limit order: {side.upper()} {quantity} {symbol.upper()} @ {price}")
 
         order = client.create_order(
@@ -15,8 +17,8 @@ def place_limit_order(symbol, side, quantity, price):
             side=side.upper(),
             type='LIMIT',
             timeInForce='GTC',
-            quantity=quantity,
-            price=f'{price:.2f}'
+            quantity=format_quantity(quantity, filters),
+            price=format_price(price, filters)
         )
 
         log.info("SUCCESS: Limit order placed.")

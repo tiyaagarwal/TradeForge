@@ -1,5 +1,6 @@
 from binance.exceptions import BinanceAPIException
 from src.client import get_binance_client
+from src.filters import get_symbol_filters, format_price, format_quantity
 from src.logger_config import log
 
 def place_oco_order(symbol, side, quantity, price, stop_price, stop_limit_price):
@@ -16,6 +17,7 @@ def place_oco_order(symbol, side, quantity, price, stop_price, stop_limit_price)
     """
     try:
         client = get_binance_client()
+        filters = get_symbol_filters(client, symbol)
         log.info(f"Attempting OCO {side.upper()} order for {quantity} {symbol.upper()}.")
         log.info(f"  - Take Profit Price: {price}")
         log.info(f"  - Stop-Loss Trigger: {stop_price}")
@@ -25,10 +27,10 @@ def place_oco_order(symbol, side, quantity, price, stop_price, stop_limit_price)
         order_report = client.create_oco_order(
             symbol=symbol.upper(),
             side=side.upper(),
-            quantity=quantity,
-            price=f'{price:.2f}', # The Take-Profit Limit Price
-            stopPrice=f'{stop_price:.2f}', # The Stop-Loss Trigger Price
-            stopLimitPrice=f'{stop_limit_price:.2f}', # The Stop-Loss Limit Price
+            quantity=format_quantity(quantity, filters),
+            price=format_price(price, filters), # The Take-Profit Limit Price
+            stopPrice=format_price(stop_price, filters), # The Stop-Loss Trigger Price
+            stopLimitPrice=format_price(stop_limit_price, filters), # The Stop-Loss Limit Price
             stopLimitTimeInForce='GTC'
         )
 

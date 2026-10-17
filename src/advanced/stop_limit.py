@@ -1,5 +1,6 @@
 from binance.exceptions import BinanceAPIException
 from src.client import get_binance_client
+from src.filters import get_symbol_filters, format_price, format_quantity
 from src.logger_config import log
 
 def place_stop_limit_order(symbol, side, quantity, price, stop_price):
@@ -8,6 +9,7 @@ def place_stop_limit_order(symbol, side, quantity, price, stop_price):
     """
     try:
         client = get_binance_client()
+        filters = get_symbol_filters(client, symbol)
         log.info(f"Attempting stop-limit: {side.upper()} {quantity} {symbol.upper()}")
         log.info(f"Stop Price: {stop_price}, Limit Price: {price}")
 
@@ -16,9 +18,9 @@ def place_stop_limit_order(symbol, side, quantity, price, stop_price):
             side=side.upper(),
             type='STOP_LOSS_LIMIT',
             timeInForce='GTC',
-            quantity=quantity,
-            price=f'{price:.2f}', # The limit price
-            stopPrice=f'{stop_price:.2f}' # The trigger price
+            quantity=format_quantity(quantity, filters),
+            price=format_price(price, filters), # The limit price
+            stopPrice=format_price(stop_price, filters) # The trigger price
         )
 
         log.info("SUCCESS: Stop-limit order placed.")
