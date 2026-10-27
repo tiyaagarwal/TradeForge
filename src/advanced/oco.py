@@ -21,15 +21,19 @@ def place_oco_order(symbol, side, quantity, price, stop_price, stop_limit_price)
         log.info(f"  - Stop-Loss Trigger: {stop_price}")
         log.info(f"  - Stop-Loss Limit: {stop_limit_price}")
 
-        # This is the specific API call for a Spot OCO order
+        # The installed python-binance client (>=0.28) replaced the old
+        # price/stopPrice/stopLimitPrice/stopLimitTimeInForce OCO params
+        # with an above/below order-list scheme.
         order_report = client.create_oco_order(
             symbol=symbol.upper(),
             side=side.upper(),
             quantity=quantity,
-            price=f'{price:.2f}', # The Take-Profit Limit Price
-            stopPrice=f'{stop_price:.2f}', # The Stop-Loss Trigger Price
-            stopLimitPrice=f'{stop_limit_price:.2f}', # The Stop-Loss Limit Price
-            stopLimitTimeInForce='GTC'
+            aboveType='LIMIT_MAKER', # The Take-Profit leg
+            abovePrice=f'{price:.2f}', # The Take-Profit Limit Price
+            belowType='STOP_LOSS_LIMIT', # The Stop-Loss leg
+            belowStopPrice=f'{stop_price:.2f}', # The Stop-Loss Trigger Price
+            belowPrice=f'{stop_limit_price:.2f}', # The Stop-Loss Limit Price
+            belowTimeInForce='GTC'
         )
 
         log.info("SUCCESS: OCO order placed.")
